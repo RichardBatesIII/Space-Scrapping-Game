@@ -1,5 +1,7 @@
 package net.brasscord.school.project.ship;
 
+import net.brasscord.school.project.user.Scrapper;
+
 public class Ship {
 
   private String name;
@@ -8,30 +10,34 @@ public class Ship {
   private int scrap;
   private byte unrest;
   private Crew crew;
+  private Scrapper user;
 
-  public Ship(String name, int health, CrewType crewType) {
+  public Ship(String name, int health, CrewType crewType, Scrapper user) {
     this.name = name;
     this.health = health;
     upgrades = new String[10];
     this.scrap = 10;
     unrest = 0;
     crew = new Crew(crewType);
+    this.user = user;
   }
 
-  public Ship(String name, CrewType crewType) {
+  public Ship(String name, CrewType crewType, Scrapper user) {
     this.name = name;
     this.health = 100;
     this.scrap = 10;
     unrest = 0;
     crew = new Crew(crewType);
+    this.user = user;
   }
 
-  public Ship() {
+  public Ship(Scrapper user) {
     this.name = "Hordon v1";
     this.health = 100;
     this.scrap = 10;
     unrest = 0;
     crew = new Crew(CrewType.Cleanup_Crew);
+    this.user = user;
   }
   
   public boolean equals(Ship ship) {
@@ -40,7 +46,13 @@ public class Ship {
 
   public String toString() {
     return "\r#########################\n" + name
-      + "\nHealth: " + health + "\nUpgrades: " + getUpgradeList() + "\nUnrest: " + unrest + "\n#########################";
+      + "\nHealth: "
+            + health + "\nUpgrades: " + getUpgradeList()
+            + "\nUnrest: " + unrest
+            + "Faction Relations\nUEF: " + user.getUEFRelation()
+            + "\nIlluminate: " + user.getIlluminateRelation()
+            + "\nCybran: " + user.getCybranRelation()
+            + "\n#########################";
   }
 
   public String getName() {
@@ -92,15 +104,14 @@ public class Ship {
   public String getUpgradeList() {
     if(upgrades != null) {
       int upgradeNum = 0;
-      String upgradeList = "";
+      StringBuilder upgradeList = new StringBuilder();
       while(upgrades.length > upgradeNum) {
-        upgradeList += upgradeNum + " ";
+        upgradeList.append(upgradeNum).append(" ");
         upgradeNum++;
       }
-      return upgradeList;
-    } else {
-      return "No upgrades currently";
+      return upgradeList.toString();
     }
+    return "No upgrades currently";
   }
 
   public String[] getUpgrades() {
@@ -119,7 +130,7 @@ public class Ship {
     // I need to finish the events first
   }
 
-  public void turmoil() {
+  public void turmoilCheck() {
     if(unrest > 10 && unrest <= 20) {
       health -= 1;
     } else if(unrest > 20 && unrest <= 30) {

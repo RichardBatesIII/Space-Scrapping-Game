@@ -1,6 +1,6 @@
 package net.brasscord.school.project.processes.command;
 
-import net.brasscord.school.project.processes.exceptions.OptionNotFound;
+import net.brasscord.school.project.processes.exceptions.OptionNotFoundException;
 import net.brasscord.school.project.user.Scrapper;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -13,7 +13,6 @@ public class CommandHandler {
   }
 
   public void handleCommand(String command, ArrayList<String> listOfPossibleOptions, boolean activeEvent) {
-    try {
       if (activeEvent) {
         int option = 0;
         while (listOfPossibleOptions.size() > option) {
@@ -25,22 +24,10 @@ public class CommandHandler {
           option++;
         }
       }
-      if (command.equals("status")) {
-        System.out.println(user.getShip().toString());
-      } else if(command.equals("q")) {
-        return;
-      } else {
-        throw new OptionNotFound();
-      }
-    } catch (OptionNotFound ex) {
-      Scanner scan = new Scanner(System.in);
-      System.out.print("\n" + ex.toString() + "\n\n");
-      handleCommand(scan.next(), listOfPossibleOptions, activeEvent);
-      scan.close();
-    }
+      handleStandardCommand(command);
   }
 
-  public void handleCommand(String command) {
+  private void handleStandardCommand(String command) {
     try {
       switch(command) {
         case "status": 
@@ -49,12 +36,12 @@ public class CommandHandler {
         case "q":
           return;
         default:
-          throw new OptionNotFound();
+          throw new OptionNotFoundException();
         } 
-      } catch(OptionNotFound ex) {
+      } catch(OptionNotFoundException ex) {
         Scanner scan = new Scanner(System.in);
-        System.out.print("\n" + ex.toString() + "\n\n");
-        handleCommand(scan.next());
+        System.out.print("\n" + ex + "\n\n");
+        handleStandardCommand(scan.next());
         scan.close();
     }
   }

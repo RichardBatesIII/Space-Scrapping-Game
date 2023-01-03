@@ -9,7 +9,7 @@ public class Scrapper {
   private int relationCybran;
 
   public Scrapper() {
-    this.ship = new Ship();
+    this.ship = new Ship(this);
     this.relationUEF = 0;
     this.relationIlluminate = 0;
     this.relationCybran = 0;

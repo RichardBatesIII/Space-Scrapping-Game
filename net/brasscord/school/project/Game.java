@@ -1,10 +1,11 @@
 package net.brasscord.school.project;
 
 import java.util.Scanner;
+import java.util.ArrayList;
+
 import net.brasscord.school.project.processes.TimeCalc;
 import net.brasscord.school.project.user.Scrapper;
 import net.brasscord.school.project.processes.command.CommandHandler;
-import java.util.ArrayList;
 
 public class Game {
   
@@ -25,19 +26,27 @@ public class Game {
       // enter below
       
       // don't remove
-      System.out.println("enter one of the options or enter q to exit: ");
+      System.out.println("enter one of the options or enter q to exit: \n");
       userInput = scan.nextLine();
       handler.handleCommand(userInput, options, false);
-      
+
       if(userInput.equals("q")) {
-        System.out.println();
-        scan.close();
+        closingOperations(scan);
+        break;
+      } else if (user.getShip().getHealth() <= 0 ) {
+        closingOperations(scan);
         break;
       }
-      scan.nextLine();
+      user.getShip().turmoilCheck();
     }
     time.end();
     System.out.println(time.toString());
     scan.close();
   }
+
+  private static void closingOperations(Scanner scan) {
+    System.out.println();
+    scan.close();
+  }
+
 }
