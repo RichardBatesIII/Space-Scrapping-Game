@@ -1,8 +1,10 @@
 package net.brasscord.school.project.processes.events;
 
+import net.brasscord.school.project.user.Scrapper;
+
 public class InvasionEvent extends HostileEvents {
-    public InvasionEvent(EventType eventType, boolean instantFailure) {
-        super(eventType, instantFailure);
+    public InvasionEvent(Scrapper user) {
+        super(EventType.critical, false, user);
     }
 
     @Override

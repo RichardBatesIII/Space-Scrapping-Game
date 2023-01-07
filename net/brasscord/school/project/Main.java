@@ -7,45 +7,33 @@ import net.brasscord.school.project.processes.TimeCalc;
 import net.brasscord.school.project.user.Scrapper;
 import net.brasscord.school.project.processes.command.CommandHandler;
 
-public class Game {
+public class Main {
   
-  public static void gameLoop() {
-    // To avoid creating a mess in main all the game logic goes in here.
+  public static void main(String[] args) {
+    // Some basic game logic is contained here.
     Scanner scan = new Scanner(System.in);
     TimeCalc time = new TimeCalc();
     Scrapper user = new Scrapper();
     final CommandHandler handler = new CommandHandler(user);
-    
+
+    // Deprecated code
     ArrayList<String> options = new ArrayList<String>();
     options.add(0, "DONT TYPE THIS...");
-    
+
     time.start();
     String userInput = "";
-    
-    while(true) {
-      // enter below
-      
-      // don't remove
+
+    // Game Loop
+    while(user.getShip().getHealth() > 0 && !userInput.equalsIgnoreCase("q")) {
+      // MISSING LOGIC FOR EVENTS
       System.out.println("enter one of the options or enter q to exit: \n");
       userInput = scan.nextLine();
+      // Look at handler for potential bugs
       handler.handleCommand(userInput, options, false);
-
-      if(userInput.equals("q")) {
-        closingOperations(scan);
-        break;
-      } else if (user.getShip().getHealth() <= 0 ) {
-        closingOperations(scan);
-        break;
-      }
       user.getShip().turmoilCheck();
     }
     time.end();
-    System.out.println(time.toString());
-    scan.close();
-  }
-
-  private static void closingOperations(Scanner scan) {
-    System.out.println();
+    System.out.println("\n" + time);
     scan.close();
   }
 
