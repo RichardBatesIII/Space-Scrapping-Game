@@ -2,7 +2,7 @@ package net.brasscord.school.project.processes.events;
 
 import net.brasscord.school.project.user.Scrapper;
 
-public class ShipMeltdownEvent extends HostileEvents {
+public class ShipMeltdownEvent extends HostileEvents implements IPrintOptions {
     public ShipMeltdownEvent(Scrapper user) {
         super(EventType.emergency, true, user);
     }

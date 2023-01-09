@@ -2,7 +2,7 @@ package net.brasscord.school.project.processes.events;
 
 import net.brasscord.school.project.user.Scrapper;
 
-public class WireSlashedEvent extends HostileEvents {
+public class WireSlashedEvent extends HostileEvents implements IPrintOptions {
     public WireSlashedEvent(Scrapper user) {
         super(EventType.maintenence, false, user);
     }

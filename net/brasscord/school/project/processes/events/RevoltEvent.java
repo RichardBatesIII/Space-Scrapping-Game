@@ -2,7 +2,7 @@ package net.brasscord.school.project.processes.events;
 
 import net.brasscord.school.project.user.Scrapper;
 
-public class RevoltEvent extends HostileEvents {
+public class RevoltEvent extends HostileEvents implements IPrintOptions {
     public RevoltEvent(Scrapper user) {
         super(EventType.emergency, true, user);
     }

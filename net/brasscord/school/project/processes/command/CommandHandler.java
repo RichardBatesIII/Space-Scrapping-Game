@@ -12,24 +12,12 @@ public class CommandHandler {
     this.user = user;
   }
 
-  public void handleCommand(String command, ArrayList<String> listOfPossibleOptions, boolean activeEvent) {
-      if (activeEvent) {
-        int option = 0;
-        while (listOfPossibleOptions.size() > option) {
-          if(listOfPossibleOptions.get(option).equals(command)) {
-            // This will run the command
-
-            return;
-          }
-          option++;
-        }
-      }
-      handleStandardCommand(command);
-  }
-
-  private void handleStandardCommand(String command) {
+  public void handleCommand(String command) {
     try {
       switch(command) {
+        case "help":
+          System.out.println("Commands:\nstatus: Shows the status of your ship.\nq: This quits the game.\nhelp: Shows you all the default command.\n");
+          break;
         case "status": 
           System.out.println(user.getShip().toString());
           break;
@@ -41,7 +29,7 @@ public class CommandHandler {
       } catch(OptionNotFoundException ex) {
         Scanner scan = new Scanner(System.in);
         System.out.print("\n" + ex + "\n\n");
-        handleStandardCommand(scan.next());
+        handleCommand(scan.next());
         scan.close();
     }
   }

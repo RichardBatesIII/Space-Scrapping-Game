@@ -2,7 +2,7 @@ package net.brasscord.school.project.processes.events;
 
 import net.brasscord.school.project.user.Scrapper;
 
-public class PipeBurstingEvent extends PassiveEvents {
+public class PipeBurstingEvent extends PassiveEvents implements IPrintOptions {
     public PipeBurstingEvent(Scrapper user) {
         super(EventType.emergency, false, user);
     }

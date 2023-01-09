@@ -2,7 +2,7 @@ package net.brasscord.school.project.processes.events;
 
 import net.brasscord.school.project.user.Scrapper;
 
-public abstract class PassiveEvents extends Events {
+public abstract class PassiveEvents extends Events implements IPrintOptions {
 
   private final boolean upgradeable;
   

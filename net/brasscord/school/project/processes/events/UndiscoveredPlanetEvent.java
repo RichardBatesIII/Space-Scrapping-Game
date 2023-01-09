@@ -2,7 +2,7 @@ package net.brasscord.school.project.processes.events;
 
 import net.brasscord.school.project.user.Scrapper;
 
-public class UndiscoveredPlanetEvent extends PassiveEvents {
+public class UndiscoveredPlanetEvent extends PassiveEvents implements IPrintOptions {
     public UndiscoveredPlanetEvent(Scrapper user) {
         super(EventType.colonization, true, user);
     }

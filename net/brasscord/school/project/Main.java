@@ -22,17 +22,18 @@ public class Main {
 
     time.start();
     String userInput = "";
+    handler.handleCommand("help");
 
     // Game Loop
     while(user.getShip().getHealth() > 0 && !userInput.equalsIgnoreCase("q")) {
       // MISSING LOGIC FOR EVENTS
       // Fire weapons method set off an event
-      user.getShip().fireWeapons();
-      System.out.println("enter one of the options or enter q to exit: \n");
-      userInput = scan.nextLine();
+      System.out.println("press enter to continue or enter q to exit: \n");
+      userInput = user.getShip().fireWeapons(scan.nextLine(), user);
       // Look at handler for potential bugs
-      handler.handleCommand(userInput, options, false);
+      handler.handleCommand(userInput);
       user.getShip().turmoilCheck();
+      user.getShip().travel();
     }
     time.end();
     System.out.println("\n" + time);

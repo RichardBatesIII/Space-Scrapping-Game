@@ -2,7 +2,7 @@ package net.brasscord.school.project.processes.events;
 
 import net.brasscord.school.project.user.Scrapper;
 
-public class OutpostEvent extends PassiveEvents {
+public class OutpostEvent extends PassiveEvents implements IPrintOptions {
     public OutpostEvent(Scrapper user) {
         super(EventType.colonization, true, user);
     }

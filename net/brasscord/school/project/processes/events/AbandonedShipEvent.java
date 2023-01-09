@@ -4,9 +4,7 @@ import net.brasscord.school.project.user.Scrapper;
 
 import java.util.Random;
 
-public class AbandonedShipEvent extends PassiveEvents {
-
-    private final String[] options = { "explore", "report" };
+public class AbandonedShipEvent extends PassiveEvents implements IPrintOptions {
 
     public AbandonedShipEvent(Scrapper user) {
         super(EventType.scrapping, false, user);
@@ -18,13 +16,22 @@ public class AbandonedShipEvent extends PassiveEvents {
         int i = random.nextInt(50);
         System.out.println("The ship carried some goodies.\nYou gained " + i + " scraps.");
         user.getShip().addScrap(i);
+
     }
 
     @Override
     public void action(String userInput) {
-        if(userInput.equals(options[0]))
+        printOptions();
+        if(userInput.equalsIgnoreCase(options()[0]))
             outcome();
-        else if (userInput.equals(options[1]))
+        else
             System.out.println("You reported the ship to your alliance and left the scene.");
+
     }
+
+    @Override
+    public String[] options() {
+        return new String[] { "explore", "report"};
+    }
+
 }

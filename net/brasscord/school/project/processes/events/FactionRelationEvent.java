@@ -4,7 +4,7 @@ import net.brasscord.school.project.user.Scrapper;
 
 import java.util.Random;
 
-public class FactionRelationEvent extends PassiveEvents {
+public class FactionRelationEvent extends PassiveEvents implements IPrintOptions {
 
     public FactionRelationEvent(Scrapper user) {
         super(EventType.confrontation, false, user);
@@ -48,6 +48,7 @@ public class FactionRelationEvent extends PassiveEvents {
 
     @Override
     public void action(String userInput) {
+        printOptions();
         System.out.println("You encountered a unknown ship!");
         outcome();
     }
@@ -60,5 +61,10 @@ public class FactionRelationEvent extends PassiveEvents {
         } else if (factionEncounter == 2) {
             user.setCybranRelation(user.getCybranRelation() + 1);
         }
+    }
+
+    @Override
+    public String[] options() {
+        return new String[] { "engage", "escape" };
     }
 }

@@ -4,10 +4,9 @@ import net.brasscord.school.project.user.Scrapper;
 import java.util.Random;
 import net.brasscord.school.project.ship.CrewType;
 
-public class ScavengeEvent extends PassiveEvents {
+public class ScavengeEvent extends PassiveEvents implements IPrintOptions {
 
   private int scrap;
-  private String[] options = { "accept", "deny"};
   
   public ScavengeEvent(Scrapper user) {
     super(EventType.scrapping, false, user);
@@ -32,10 +31,8 @@ public class ScavengeEvent extends PassiveEvents {
 
   @Override
   public void action(String userInput) {
-    if(userInput.equals(options[0]))
+    if(userInput.equals(options()[0]))
       outcome();
-    else if(userInput.equals(options[1])) {
-    }
   }
   
 }
