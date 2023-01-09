@@ -24,6 +24,9 @@ public class Crew {
   public CrewType getCrewType() {
     return crewType;
   }
+  public float getUnrestMultiplier() {
+    return unrestMultiplier;
+  }
   
   
 }
