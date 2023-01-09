@@ -1,8 +1,10 @@
 package net.brasscord.school.project.processes.events;
 
+import net.brasscord.school.project.user.Scrapper;
+
 public class RevoltEvent extends HostileEvents {
-    public RevoltEvent(EventType eventType, boolean instantFailure) {
-        super(eventType, instantFailure);
+    public RevoltEvent(Scrapper user) {
+        super(EventType.emergency, true, user);
     }
 
     @Override

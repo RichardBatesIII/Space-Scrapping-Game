@@ -1,8 +1,10 @@
 package net.brasscord.school.project.processes.events;
 
+import net.brasscord.school.project.user.Scrapper;
+
 public class MaintenanceEvent extends PassiveEvents {
-    public MaintenanceEvent(EventType eventType, boolean upgradeable) {
-        super(eventType, upgradeable);
+    public MaintenanceEvent(Scrapper user) {
+        super(EventType.maintenence, false, user);
     }
 
     @Override

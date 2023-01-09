@@ -5,14 +5,12 @@ import java.util.Random;
 import net.brasscord.school.project.ship.CrewType;
 
 public class ScavengeEvent extends PassiveEvents {
-  
-  private Scrapper user;
+
   private int scrap;
   private String[] options = { "accept", "deny"};
   
   public ScavengeEvent(Scrapper user) {
-    super(EventType.scrapping, false);
-    this.user = user;
+    super(EventType.scrapping, false, user);
     this.scrap = scrapCalc();
   }
 

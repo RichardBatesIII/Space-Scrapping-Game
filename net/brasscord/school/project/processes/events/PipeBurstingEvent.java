@@ -1,8 +1,10 @@
 package net.brasscord.school.project.processes.events;
 
+import net.brasscord.school.project.user.Scrapper;
+
 public class PipeBurstingEvent extends PassiveEvents {
-    public PipeBurstingEvent(EventType eventType, boolean upgradeable) {
-        super(eventType, upgradeable);
+    public PipeBurstingEvent(Scrapper user) {
+        super(EventType.emergency, false, user);
     }
 
     @Override

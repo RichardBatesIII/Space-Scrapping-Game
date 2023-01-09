@@ -5,5 +5,7 @@ public enum EventType {
   emergency,
   confrontation,
   maintenence,
-  scrapping
+  scrapping,
+  colonization,
+  merchant
 }

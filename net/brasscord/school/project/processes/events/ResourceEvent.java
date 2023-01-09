@@ -1,8 +1,10 @@
 package net.brasscord.school.project.processes.events;
 
+import net.brasscord.school.project.user.Scrapper;
+
 public class ResourceEvent extends PassiveEvents {
-    public ResourceEvent(EventType eventType, boolean upgradeable) {
-        super(eventType, upgradeable);
+    public ResourceEvent(Scrapper user) {
+        super(EventType.scrapping, true, user);
     }
 
     @Override

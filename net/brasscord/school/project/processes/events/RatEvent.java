@@ -1,8 +1,10 @@
 package net.brasscord.school.project.processes.events;
 
+import net.brasscord.school.project.user.Scrapper;
+
 public class RatEvent extends HostileEvents {
-    public RatEvent(EventType eventType, boolean instantFailure) {
-        super(eventType, instantFailure);
+    public RatEvent(Scrapper user) {
+        super(EventType.emergency, false, user);
     }
 
     @Override

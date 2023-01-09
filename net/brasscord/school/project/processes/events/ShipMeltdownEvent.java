@@ -1,8 +1,10 @@
 package net.brasscord.school.project.processes.events;
 
+import net.brasscord.school.project.user.Scrapper;
+
 public class ShipMeltdownEvent extends HostileEvents {
-    public ShipMeltdownEvent(EventType eventType, boolean instantFailure) {
-        super(eventType, instantFailure);
+    public ShipMeltdownEvent(Scrapper user) {
+        super(EventType.emergency, true, user);
     }
 
     @Override

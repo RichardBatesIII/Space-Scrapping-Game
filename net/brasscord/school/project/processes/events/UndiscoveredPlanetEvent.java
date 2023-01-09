@@ -1,8 +1,10 @@
 package net.brasscord.school.project.processes.events;
 
+import net.brasscord.school.project.user.Scrapper;
+
 public class UndiscoveredPlanetEvent extends PassiveEvents {
-    public UndiscoveredPlanetEvent(EventType eventType, boolean upgradeable) {
-        super(eventType, upgradeable);
+    public UndiscoveredPlanetEvent(Scrapper user) {
+        super(EventType.colonization, true, user);
     }
 
     @Override

@@ -1,8 +1,10 @@
 package net.brasscord.school.project.processes.events;
 
+import net.brasscord.school.project.user.Scrapper;
+
 public class OutpostEvent extends PassiveEvents {
-    public OutpostEvent(EventType eventType, boolean upgradeable) {
-        super(eventType, upgradeable);
+    public OutpostEvent(Scrapper user) {
+        super(EventType.colonization, true, user);
     }
 
     @Override

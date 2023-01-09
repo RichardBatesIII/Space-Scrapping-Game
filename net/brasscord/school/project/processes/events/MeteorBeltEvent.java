@@ -1,8 +1,10 @@
 package net.brasscord.school.project.processes.events;
 
+import net.brasscord.school.project.user.Scrapper;
+
 public class MeteorBeltEvent extends HostileEvents {
-    public MeteorBeltEvent(EventType eventType, boolean instantFailure) {
-        super(eventType, instantFailure);
+    public MeteorBeltEvent(Scrapper user) {
+        super(EventType.emergency, true, user);
     }
 
     @Override

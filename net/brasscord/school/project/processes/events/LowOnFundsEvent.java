@@ -1,8 +1,10 @@
 package net.brasscord.school.project.processes.events;
 
+import net.brasscord.school.project.user.Scrapper;
+
 public class LowOnFundsEvent extends PassiveEvents {
-    public LowOnFundsEvent(EventType eventType, boolean upgradeable) {
-        super(eventType, upgradeable);
+    public LowOnFundsEvent(Scrapper user) {
+        super(EventType.critical, false, user);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package net.brasscord.school.project.ship;
 
+import net.brasscord.school.project.processes.events.EventGenerator;
 import net.brasscord.school.project.user.Scrapper;
 
 public class Ship {
@@ -122,8 +123,10 @@ public class Ship {
     this.upgrades = upgradeList;
   }
 
-  public void fireWeapons() {
+  public void fireWeapons(String userInput, Scrapper user) {
     // I need to finish the events first
+    EventGenerator eventGenerator = new EventGenerator();
+    eventGenerator.generateEvent(userInput, user);
   }
 
   public void travel() {
