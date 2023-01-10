@@ -29,7 +29,7 @@ public class Main {
       // MISSING LOGIC FOR EVENTS
       // Fire weapons method set off an event
       System.out.println("press enter to continue or enter q to exit: \n");
-      userInput = user.getShip().fireWeapons(scan.nextLine(), user);
+      userInput = user.getShip().fireWeapons(user);
       // Look at handler for potential bugs
       handler.handleCommand(userInput);
       user.getShip().turmoilCheck();

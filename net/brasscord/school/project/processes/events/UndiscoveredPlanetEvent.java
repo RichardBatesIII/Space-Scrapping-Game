@@ -13,7 +13,7 @@ public class UndiscoveredPlanetEvent extends PassiveEvents implements IPrintOpti
     }
 
     @Override
-    public void action(String userInput) {
+    public void action() {
 
     }
 }

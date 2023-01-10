@@ -15,12 +15,13 @@ public class InvasionEvent extends HostileEvents implements IPrintOptions {
     }
 
     @Override
-    public void action(String userInput) {
+    public void action() {
         System.out.println("A alien invasion occurred and your ship is under-attacked.");
         printOptions();
+        String input = userInput();
         Random random = new Random();
         int chances = random.nextInt(0, 100);
-        if(userInput.equalsIgnoreCase(options()[0]) || userInput.equalsIgnoreCase(options()[2])) {
+        if(input.equalsIgnoreCase(options()[0]) || input.equalsIgnoreCase(options()[2])) {
             if(chances >= 50)
                 victory();
             else

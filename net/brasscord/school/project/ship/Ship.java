@@ -71,7 +71,7 @@ public class Ship {
       + "\nHealth: "
             + health + "\nUpgrades: " + getUpgradeList()
             + "\nUnrest: " + unrest
-            + "Faction Relations\nUEF: " + user.getUEFRelation()
+            + "\nFaction Relations\nUEF: " + user.getUEFRelation()
             + "\nIlluminate: " + user.getIlluminateRelation()
             + "\nCybran: " + user.getCybranRelation()
             + "\n#########################";
@@ -154,8 +154,8 @@ public class Ship {
     this.upgrades = upgradeList;
   }
 
-  public String fireWeapons(String userInput, Scrapper user) {
-    eventGenerator.generateEvent(userInput, user);
+  public String fireWeapons(Scrapper user) {
+    eventGenerator.generateEvent(user);
     eventGenerator.reRoll();
     return userInput;
   }

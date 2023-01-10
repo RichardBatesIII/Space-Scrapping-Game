@@ -26,7 +26,7 @@ public class HarvestFailureEvent extends PassiveEvents {
     }
 
     @Override
-    public void action(String userInput) {
+    public void action() {
         outcome();
     }
 }

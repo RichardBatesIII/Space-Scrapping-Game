@@ -14,6 +14,6 @@ public abstract class Events {
   }
 
   public abstract void outcome();
-  public abstract void action(String userInput);
+  public abstract void action();
   
 }

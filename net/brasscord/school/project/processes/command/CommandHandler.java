@@ -23,6 +23,8 @@ public class CommandHandler {
           break;
         case "q":
           return;
+        case "":
+          break;
         default:
           throw new OptionNotFoundException();
         } 

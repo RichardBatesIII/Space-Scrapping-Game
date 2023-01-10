@@ -18,64 +18,64 @@ public class EventGenerator {
     lottery = random.nextDouble(0.0, 100.0);
   }
   
-  public void generateEvent(String reply, Scrapper user) {
+  public void generateEvent(Scrapper user) {
     if (lottery <= 5.55555555556) {
       AbandonedShipEvent event = new AbandonedShipEvent(user);
-      event.action(reply);
+      event.action();
     } else if (lottery <= 11.1111111111) {
       FactionRelationEvent event = new FactionRelationEvent(user);
-      event.action(reply);
+      event.action();
     } else if (lottery <= 16.6666666667) {
       HarvestFailureEvent event = new HarvestFailureEvent(user);
-      event.action(reply);
+      event.action();
     } else if (lottery <= 22.2222222222) {
       InvasionEvent event = new InvasionEvent(user);
-      event.action(reply);
+      event.action();
     } else if (lottery <= 27.7777777778) {
       LoseOfLifeEvent event = new LoseOfLifeEvent(user);
-      event.action(reply);
+      event.action();
     } else if (lottery <= 33.3333333334) {
       LowOnFundsEvent event = new LowOnFundsEvent(user);
-      event.action(reply);
+      event.action();
     } else if (lottery <= 38.8888888889 ) {
       MaintenanceEvent event = new MaintenanceEvent(user);
-      event.action(reply);
+      event.action();
     } else if (lottery <= 44.4444444445 ) {
       MeteorBeltEvent event = new MeteorBeltEvent(user);
-      event.action(reply);
+      event.action();
     } else if (lottery <= 50.0) {
       OutpostEvent event = new OutpostEvent(user);
-      event.action(reply);
+      event.action();
     } else if (lottery <= 55.5555555556) {
       PipeBurstingEvent event = new PipeBurstingEvent(user);
-      event.action(reply);
+      event.action();
     } else if (lottery <= 61.1111111112) {
       RatEvent event = new RatEvent(user);
-      event.action(reply);
+      event.action();
     } else if (lottery <= 66.6666666667) {
       ResourceEvent event = new ResourceEvent(user);
-      event.action(reply);
+      event.action();
     } else if (lottery <= 72.2222222223) {
       RevoltEvent event = new RevoltEvent(user);
-      event.action(reply);
+      event.action();
     } else if (lottery <= 77.7777777778) {
       ScavengeEvent event = new ScavengeEvent(user);
-      event.action(reply);
+      event.action();
     } else if (lottery <= 83.3333333334) {
       ShipMeltdownEvent event = new ShipMeltdownEvent(user);
-      event.action(reply);
+      event.action();
     } else if (lottery <= 88.888888889) {
       ShopkeeperEncounterEvent event = new ShopkeeperEncounterEvent(user);
-      event.action(reply);
+      event.action();
     } else if (lottery <= 94.4444444445) {
       UndiscoveredPlanetEvent event = new UndiscoveredPlanetEvent(user);
-      event.action(reply);
+      event.action();
     } else if (lottery <= 100.0) {
       WireSlashedEvent event = new WireSlashedEvent(user);
-      event.action(reply);
+      event.action();
     } else {
       ScavengeEvent event = new ScavengeEvent(user);
-      event.action(reply);
+      event.action();
     }
   }
   

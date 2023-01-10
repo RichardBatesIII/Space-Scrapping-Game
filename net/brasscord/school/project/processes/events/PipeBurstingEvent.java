@@ -13,7 +13,7 @@ public class PipeBurstingEvent extends PassiveEvents implements IPrintOptions {
     }
 
     @Override
-    public void action(String userInput) {
+    public void action() {
 
     }
 }

@@ -20,9 +20,9 @@ public class AbandonedShipEvent extends PassiveEvents implements IPrintOptions {
     }
 
     @Override
-    public void action(String userInput) {
+    public void action() {
         printOptions();
-        if(userInput.equalsIgnoreCase(options()[0]))
+        if(userInput().equalsIgnoreCase(options()[0]))
             outcome();
         else
             System.out.println("You reported the ship to your alliance and left the scene.");

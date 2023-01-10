@@ -13,7 +13,7 @@ public class ShopkeeperEncounterEvent extends PassiveEvents implements IPrintOpt
     }
 
     @Override
-    public void action(String userInput) {
+    public void action() {
 
     }
 }

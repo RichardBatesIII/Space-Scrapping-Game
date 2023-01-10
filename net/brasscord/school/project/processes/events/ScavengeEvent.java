@@ -30,8 +30,8 @@ public class ScavengeEvent extends PassiveEvents implements IPrintOptions {
   }
 
   @Override
-  public void action(String userInput) {
-    if(userInput.equals(options()[0]))
+  public void action() {
+    if(userInput().equals(options()[0]))
       outcome();
   }
   

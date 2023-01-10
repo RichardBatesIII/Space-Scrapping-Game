@@ -13,7 +13,7 @@ public class RevoltEvent extends HostileEvents implements IPrintOptions {
     }
 
     @Override
-    public void action(String userInput) {
+    public void action() {
 
     }
 
