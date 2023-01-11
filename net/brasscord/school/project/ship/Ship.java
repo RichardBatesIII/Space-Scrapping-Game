@@ -10,23 +10,23 @@ public class Ship {
 
   private String name;
   private int health;
-  private String[] upgrades;
   private int scrap;
   private byte unrest;
   private double stability = 1;
   private final Crew crew;
   private final Scrapper user;
   private final EventGenerator eventGenerator;
+  private int colonies;
 
   public Ship(String name, int health, CrewType crewType, Scrapper user) {
     this.name = name;
     this.health = health;
-    upgrades = new String[10];
     scrap = 10;
     unrest = 0;
     crew = new Crew(crewType);
     this.user = user;
     eventGenerator = new EventGenerator();
+    colonies = 0;
   }
 
   public Ship(Scrapper user) {
@@ -37,6 +37,7 @@ public class Ship {
     crew = new Crew(CrewType.Cleanup_Crew);
     this.user = user;
     eventGenerator = new EventGenerator();
+    colonies = 0;
   }
 
   public Ship() {
@@ -47,17 +48,17 @@ public class Ship {
     crew = new Crew(CrewType.Cleanup_Crew);
     user = new Scrapper();
     eventGenerator = new EventGenerator();
+    colonies = 0;
   }
   
   public boolean equals(Ship ship) {
-      return health == ship.getHealth() && name.equals(ship.getName()) && scrap == ship.getTotalofScrap() && Arrays.equals(upgrades, ship.getUpgrades());
+      return health == ship.getHealth() && name.equals(ship.getName()) && scrap == ship.getScrap();
   }
 
   public String toString() {
     return "\r#########################\n" + name
       + "\nHealth: "
-            + health + "\nUpgrades: " + getUpgradeList()
-            + "\nUnrest: " + unrest
+            + health + "\nUnrest: " + unrest
             + "\nFaction Relations\nUEF: " + user.getUEFRelation()
             + "\nIlluminate: " + user.getIlluminateRelation()
             + "\nCybran: " + user.getCybranRelation()
@@ -72,11 +73,11 @@ public class Ship {
     this.name = name;
   }  
 
-  public int getTotalofScrap() {
+  public int getScrap() {
     return scrap;
   }
 
-  public void setTotalofScrap(int scraps) {
+  public void setScrap(int scraps) {
     scrap = scraps;
   }
 
@@ -120,27 +121,6 @@ public class Ship {
     return crew;
   }
 
-  public String getUpgradeList() {
-    if(upgrades != null) {
-      int upgradeNum = 0;
-      StringBuilder upgradeList = new StringBuilder();
-      while(upgrades.length > upgradeNum) {
-        upgradeList.append(upgradeNum).append(" ");
-        upgradeNum++;
-      }
-      return upgradeList.toString();
-    }
-    return "No upgrades currently";
-  }
-
-  public String[] getUpgrades() {
-    return upgrades;
-  }
-
-  private void setUpgradeList(String[] upgradeList) {
-    this.upgrades = upgradeList;
-  }
-
   public void fireWeapons(Scrapper user) {
     eventGenerator.generateEvent(user);
     eventGenerator.reRoll();
@@ -155,6 +135,11 @@ public class Ship {
   }
 
   public void turmoilCheck() {
+    if(scrap < 0) {
+      addUnrest((byte) 5);
+      health -= 5;
+      System.out.println("You ran out of scrap and can't fix your equipment.");
+    }
     if(unrest > 10 && unrest <= 20) {
       health -= 1;
       stability = 1;
@@ -175,6 +160,21 @@ public class Ship {
     else if(unrest == 100) {
       health -= 1000;
       stability = 0;
+    }
+  }
+
+  public void setColonies(int colonies) {
+    this.colonies = colonies;
+  }
+
+  public int getColonies() {
+    return colonies;
+  }
+
+  public void collectPlanetaryIncome() {
+    if(colonies != 0) {
+      System.out.println("You collected resources from your colonies");
+      scrap = colonies * 5;
     }
   }
   

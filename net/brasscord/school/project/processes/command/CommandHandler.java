@@ -21,10 +21,8 @@ public class CommandHandler {
         case "status": 
           System.out.println(user.getShip().toString());
           break;
-        case "q":
+        case "q",  "continue":
           return;
-        case "":
-          break;
         default:
           throw new OptionNotFoundException();
         } 

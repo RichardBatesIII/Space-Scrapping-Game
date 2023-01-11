@@ -14,8 +14,11 @@ public interface IPrintOptions {
   }
 
   default String userInput() {
+    String response = "";
     Scanner scan = new Scanner(System.in);
-    String response = scan.nextLine();
+    if(scan.hasNext())
+
+    response = scan.nextLine();
     scan.close();
     return response;
   }

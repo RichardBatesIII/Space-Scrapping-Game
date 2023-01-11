@@ -35,6 +35,7 @@ public class Main {
       user.getShip().fireWeapons(user);
       user.getShip().turmoilCheck();
       user.getShip().travel();
+      user.getShip().collectPlanetaryIncome();
     }
     scan.close();
     time.end();
