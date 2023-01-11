@@ -48,10 +48,10 @@ public class FactionRelationEvent extends PassiveEvents implements IPrintOptions
 
     @Override
     public void action() {
-      printOptions();
-      System.out.println("You encountered a unknown ship!");
-      if(userInput().equalsIgnoreCase(options()[0]))
-        outcome();
+        System.out.println("You encountered a unknown ship!");
+        printOptions();
+        if(userInput().equalsIgnoreCase(options()[0]))
+            outcome();
     }
 
     private void factionConfronted(int factionEncounter) {

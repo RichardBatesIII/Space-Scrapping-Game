@@ -21,6 +21,7 @@ public class AbandonedShipEvent extends PassiveEvents implements IPrintOptions {
 
     @Override
     public void action() {
+        System.out.println("You found a abandoned ship what should you do?");
         printOptions();
         if(userInput().equalsIgnoreCase(options()[0]))
             outcome();

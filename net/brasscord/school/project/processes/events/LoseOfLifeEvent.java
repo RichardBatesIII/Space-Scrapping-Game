@@ -9,8 +9,8 @@ public class LoseOfLifeEvent extends PassiveEvents {
 
     @Override
     public void outcome() {
-        System.out.println("Someone lost their life while working and everyone is greaving.");
-        user.getShip().addUnrest((byte)3);
+        System.out.println("Someone lost their life while working and everyone is grieving.");
+        user.getShip().addUnrest((byte) 3);
     }
 
     @Override

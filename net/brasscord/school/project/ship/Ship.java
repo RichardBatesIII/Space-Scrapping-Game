@@ -3,6 +3,7 @@ package net.brasscord.school.project.ship;
 import net.brasscord.school.project.processes.events.EventGenerator;
 import net.brasscord.school.project.user.Scrapper;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Ship {
@@ -12,10 +13,10 @@ public class Ship {
   private String[] upgrades;
   private int scrap;
   private byte unrest;
-  private double stability;
-  private Crew crew;
-  private Scrapper user;
-  private EventGenerator eventGenerator;
+  private double stability = 1;
+  private final Crew crew;
+  private final Scrapper user;
+  private final EventGenerator eventGenerator;
 
   public Ship(String name, int health, CrewType crewType, Scrapper user) {
     this.name = name;
@@ -26,18 +27,6 @@ public class Ship {
     crew = new Crew(crewType);
     this.user = user;
     eventGenerator = new EventGenerator();
-    stability = 1;
-  }
-
-  public Ship(String name, CrewType crewType, Scrapper user) {
-    this.name = name;
-    health = 100;
-    scrap = 10;
-    unrest = 0;
-    crew = new Crew(crewType);
-    this.user = user;
-    eventGenerator = new EventGenerator();
-    stability = 1;
   }
 
   public Ship(Scrapper user) {
@@ -48,7 +37,6 @@ public class Ship {
     crew = new Crew(CrewType.Cleanup_Crew);
     this.user = user;
     eventGenerator = new EventGenerator();
-    stability = 1;
   }
 
   public Ship() {
@@ -59,11 +47,10 @@ public class Ship {
     crew = new Crew(CrewType.Cleanup_Crew);
     user = new Scrapper();
     eventGenerator = new EventGenerator();
-    stability = 1;
   }
   
   public boolean equals(Ship ship) {
-      return health == ship.getHealth() && name.equals(ship.getName()) && scrap == ship.getTotalofScrap() && upgrades.equals(ship.getUpgrades());
+      return health == ship.getHealth() && name.equals(ship.getName()) && scrap == ship.getTotalofScrap() && Arrays.equals(upgrades, ship.getUpgrades());
   }
 
   public String toString() {
@@ -154,10 +141,9 @@ public class Ship {
     this.upgrades = upgradeList;
   }
 
-  public String fireWeapons(Scrapper user) {
+  public void fireWeapons(Scrapper user) {
     eventGenerator.generateEvent(user);
     eventGenerator.reRoll();
-    return userInput;
   }
 
   public void travel() {
@@ -165,12 +151,10 @@ public class Ship {
     Random random = new Random();
     int scrap = (int) (random.nextInt(1, 16) * stability);
     this.addScrap(scrap);
-    System.out.println("You discovered some scrap while traveling\nYou found " + scrap + " scrap!");
-
+    System.out.println("\nYou discovered some scrap while traveling\nYou found " + scrap + " scrap!");
   }
 
   public void turmoilCheck() {
-    stability = 1;
     if(unrest > 10 && unrest <= 20) {
       health -= 1;
       stability = 1;
