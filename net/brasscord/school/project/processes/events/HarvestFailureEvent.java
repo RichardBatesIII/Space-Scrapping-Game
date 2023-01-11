@@ -27,6 +27,7 @@ public class HarvestFailureEvent extends PassiveEvents {
 
     @Override
     public void action() {
+        System.out.println("\n");
         outcome();
     }
 }
