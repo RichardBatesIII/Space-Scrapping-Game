@@ -21,7 +21,7 @@ public class Ship {
   public Ship(String name, int health, CrewType crewType, Scrapper user) {
     this.name = name;
     this.health = health;
-    scrap = 10;
+    scrap = 100;
     unrest = 0;
     crew = new Crew(crewType);
     this.user = user;
@@ -30,9 +30,9 @@ public class Ship {
   }
 
   public Ship(Scrapper user) {
-    name = "Hordon v1";
+    name = "Johnny Sins";
     health = 100;
-    scrap = 10;
+    scrap = 100;
     unrest = 0;
     crew = new Crew(CrewType.Cleanup_Crew);
     this.user = user;
@@ -43,7 +43,7 @@ public class Ship {
   public Ship() {
     name = "Joe";
     health = 100;
-    scrap = 10;
+    scrap = 100;
     unrest = 0;
     crew = new Crew(CrewType.Cleanup_Crew);
     user = new Scrapper();
