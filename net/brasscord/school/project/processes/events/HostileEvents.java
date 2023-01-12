@@ -7,12 +7,14 @@ public abstract class HostileEvents extends Events {
 
   private boolean instantFailure;
   
-  public HostileEvents(EventType eventType, boolean instantFailure, Scrapper user, String name) {
+  public HostileEvents(EventType eventType, boolean instantFailure,
+                       Scrapper user, String name) {
     super(eventType, user, name);
     this.instantFailure = instantFailure;
   }
 
   public abstract void victory();
+  
   public abstract void failure();
 
   public String toString() {

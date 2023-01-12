@@ -18,6 +18,7 @@ public abstract class Events {
   }
 
   public abstract void outcome();
+  
   public abstract void action();
 
   protected String getEventType() {

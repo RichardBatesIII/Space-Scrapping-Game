@@ -40,7 +40,8 @@ public class MeteorBeltEvent extends HostileEvents implements IPrintOptions {
 
     @Override
     public void failure() {
-        System.out.println("You damaged by some of the asteroids");                
+        System.out.println("You were damaged by"
+                           + " some of the asteroids");                
         user.getShip().setHealth(user.getShip().getHealth() - 10);
     }
 

@@ -42,7 +42,8 @@ public class InvasionEvent extends HostileEvents implements IPrintOptions {
         Random random = new Random();
         int scrap = random.nextInt(25, 100);
         System.out.println("You did it! You defeated the unknown foes"
-                           + " and gained some loot.\nYou gained " + scrap + " scrap!");
+                           + " and gained some loot.\nYou gained "
+                           + scrap + " scrap!");
         user.getShip().addScrap(scrap);
         user.getShip().addUnrest((byte) -5);
     }

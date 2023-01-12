@@ -3,20 +3,26 @@ package net.brasscord.school.project.ship;
 import net.brasscord.school.project.processes.events.EventGenerator;
 import net.brasscord.school.project.user.Scrapper;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Ship {
 
   private String name;
+  
   private int health;
+  
   private int scrap;
+  
   private int colonies;
+  
   private byte unrest;
+  
   private double stability = 1;
   
   private final Crew crew;
+  
   private final Scrapper user;
+  
   private final EventGenerator eventGenerator;
 
   public Ship(String name, int health, CrewType crewType, Scrapper user) {
@@ -125,6 +131,14 @@ public class Ship {
     return crew;
   }
 
+  public void setColonies(int colonies) {
+    this.colonies = colonies;
+  }
+
+  public int getColonies() {
+    return colonies;
+  }
+
   public void fireWeapons(Scrapper user) {
     eventGenerator.generateEvent(user);
     eventGenerator.reRoll();
@@ -166,14 +180,6 @@ public class Ship {
       health -= 1000;
       stability = 0;
     }
-  }
-
-  public void setColonies(int colonies) {
-    this.colonies = colonies;
-  }
-
-  public int getColonies() {
-    return colonies;
   }
 
   public void collectPlanetaryIncome() {
