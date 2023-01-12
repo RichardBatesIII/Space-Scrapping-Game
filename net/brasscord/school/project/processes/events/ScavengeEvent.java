@@ -9,12 +9,8 @@ public class ScavengeEvent extends PassiveEvents implements IPrintOptions {
   private int scrap;
   
   public ScavengeEvent(Scrapper user) {
-    super(EventType.scrapping, false, user);
+    super(EventType.scrapping, false, user, "Scavenging mission");
     this.scrap = scrapCalc();
-  }
-
-  public String toString() {
-    return "You received " + scrap + " 5 pieces of scrap.";
   }
 
   public int scrapCalc() {
@@ -31,6 +27,7 @@ public class ScavengeEvent extends PassiveEvents implements IPrintOptions {
 
   @Override
   public void action() {
+        System.out.println(this);
     System.out.println("You found a scrap-able meteor");
     printOptions();
     if(userInput().equals(options()[0]))

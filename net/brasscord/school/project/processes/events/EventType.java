@@ -6,6 +6,5 @@ public enum EventType {
   confrontation,
   maintenence,
   scrapping,
-  colonization,
-  merchant
+  colonization
 }

@@ -4,7 +4,7 @@ import net.brasscord.school.project.user.Scrapper;
 
 public class LoseOfLifeEvent extends PassiveEvents {
     public LoseOfLifeEvent(Scrapper user) {
-        super(EventType.confrontation, false, user);
+        super(EventType.confrontation, false, user, "Loss of life");
     }
 
     @Override
@@ -15,6 +15,7 @@ public class LoseOfLifeEvent extends PassiveEvents {
 
     @Override
     public void action() {
+        System.out.println(this);
         outcome();
     }
 }

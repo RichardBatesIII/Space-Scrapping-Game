@@ -6,7 +6,7 @@ import java.util.Random;
 public class HarvestFailureEvent extends PassiveEvents {
 
     public HarvestFailureEvent(Scrapper user) {
-        super(EventType.emergency, false, user);
+        super(EventType.emergency, false, user, "Harvest Emergency");
     }
 
     @Override
@@ -27,6 +27,7 @@ public class HarvestFailureEvent extends PassiveEvents {
 
     @Override
     public void action() {
+        System.out.println(this);
         System.out.println("\n");
         outcome();
     }

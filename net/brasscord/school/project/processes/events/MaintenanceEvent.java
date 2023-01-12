@@ -4,7 +4,7 @@ import net.brasscord.school.project.user.Scrapper;
 
 public class MaintenanceEvent extends PassiveEvents implements IPrintOptions {
     public MaintenanceEvent(Scrapper user) {
-        super(EventType.maintenence, false, user);
+        super(EventType.maintenence, false, user, "Maintenance");
     }
 
     @Override
@@ -24,6 +24,7 @@ public class MaintenanceEvent extends PassiveEvents implements IPrintOptions {
 
     @Override
     public void action() {
+        System.out.println(this);
         System.out.println("Your crew has some spare time"
                            + " to fix machinery which do you chose?");
         printOptions();

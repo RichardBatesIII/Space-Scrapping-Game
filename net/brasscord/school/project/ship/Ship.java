@@ -62,6 +62,7 @@ public class Ship {
     return "\r#########################\n" + name
       + "\nHealth: "
             + health + "\nUnrest: " + unrest
+            + "\nScrap: " + scrap
             + "\nFaction Relations\nUEF: " + user.getUEFRelation()
             + "\nIlluminate: " + user.getIlluminateRelation()
             + "\nCybran: " + user.getCybranRelation()

@@ -4,7 +4,7 @@ import net.brasscord.school.project.user.Scrapper;
 
 public class OutpostEvent extends PassiveEvents implements IPrintOptions {
     public OutpostEvent(Scrapper user) {
-        super(EventType.colonization, true, user);
+        super(EventType.colonization, true, user, "Outpost Mission");
     }
 
     @Override
@@ -19,8 +19,10 @@ public class OutpostEvent extends PassiveEvents implements IPrintOptions {
 
     @Override
     public void action() {
+        System.out.println(this);
         System.out.println("You discovered a undiscovered planet"
-                           + " do you want to colonize the planet?\nIt costs 10 scrap.");
+                           + " do you want to colonize the planet?"
+                           + "\nIt costs 10 scrap.");
         printOptions();
         outcome();
     }

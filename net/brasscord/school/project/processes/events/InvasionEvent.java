@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class InvasionEvent extends HostileEvents implements IPrintOptions {
     public InvasionEvent(Scrapper user) {
-        super(EventType.critical, false, user);
+        super(EventType.critical, false, user, "Invasion");
     }
 
     @Override
@@ -29,6 +29,7 @@ public class InvasionEvent extends HostileEvents implements IPrintOptions {
 
     @Override
     public void action() {
+        System.out.println(this);
         System.out.println("A alien invasion occurred and your ship is under-attacked.");
         printOptions();
         outcome();

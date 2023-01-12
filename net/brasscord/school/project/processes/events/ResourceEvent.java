@@ -6,7 +6,7 @@ import net.brasscord.school.project.user.Scrapper;
 
 public class ResourceEvent extends PassiveEvents {
     public ResourceEvent(Scrapper user) {
-        super(EventType.scrapping, true, user);
+        super(EventType.scrapping, true, user, "Resource vein found");
     }
 
     @Override
@@ -24,6 +24,7 @@ public class ResourceEvent extends PassiveEvents {
 
     @Override
     public void action() {
+        System.out.println(this);
         System.out.println("While exploring you came"
                            + " across a ore vein of a unknown substance!");
         outcome();

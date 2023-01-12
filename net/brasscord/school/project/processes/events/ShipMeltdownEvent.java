@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class ShipMeltdownEvent extends HostileEvents implements IPrintOptions {
     public ShipMeltdownEvent(Scrapper user) {
-        super(EventType.emergency, true, user);
+        super(EventType.emergency, true, user, "Ship Meltdown emergency");
     }
 
     @Override
@@ -28,6 +28,7 @@ public class ShipMeltdownEvent extends HostileEvents implements IPrintOptions {
 
     @Override
     public void action() {
+        System.out.println(this);
         System.out.println("Ship started to meltdown where should you check?");
         printOptions();
     }

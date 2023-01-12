@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class RevoltEvent extends HostileEvents implements IPrintOptions {
     public RevoltEvent(Scrapper user) {
-        super(EventType.emergency, true, user);
+        super(EventType.emergency, true, user, "Revolution");
     }
 
     @Override
@@ -43,6 +43,7 @@ public class RevoltEvent extends HostileEvents implements IPrintOptions {
 
     @Override
     public void action() {
+        System.out.println(this);
         System.out.println("It seems due to a disagreement"
                            + " it has sparked rumors of a revolt.");
         printOptions();

@@ -4,7 +4,7 @@ import net.brasscord.school.project.user.Scrapper;
 
 public class UndiscoveredPlanetEvent extends PassiveEvents implements IPrintOptions {
     public UndiscoveredPlanetEvent(Scrapper user) {
-        super(EventType.colonization, true, user);
+        super(EventType.colonization, true, user, "Undiscovered planet mission");
     }
 
     @Override
@@ -17,6 +17,7 @@ public class UndiscoveredPlanetEvent extends PassiveEvents implements IPrintOpti
 
     @Override
     public void action() {
+        System.out.println(this);
         System.out.println("You found a huge planet ripe for the taking.");
         printOptions();
         outcome();

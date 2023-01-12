@@ -7,7 +7,7 @@ import java.util.Random;
 public class AbandonedShipEvent extends PassiveEvents implements IPrintOptions {
 
     public AbandonedShipEvent(Scrapper user) {
-        super(EventType.scrapping, false, user);
+        super(EventType.scrapping, false, user, "Abandoned Ship Mission");
     }
 
     @Override
@@ -21,6 +21,7 @@ public class AbandonedShipEvent extends PassiveEvents implements IPrintOptions {
 
     @Override
     public void action() {
+        System.out.println(this);
         System.out.println("You found a abandoned ship what should you do?");
         printOptions();
         if(userInput().equalsIgnoreCase(options()[0]))

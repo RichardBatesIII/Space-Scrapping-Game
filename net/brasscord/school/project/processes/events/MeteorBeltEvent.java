@@ -6,7 +6,7 @@ import net.brasscord.school.project.user.Scrapper;
 
 public class MeteorBeltEvent extends HostileEvents implements IPrintOptions {
     public MeteorBeltEvent(Scrapper user) {
-        super(EventType.emergency, true, user);
+        super(EventType.emergency, true, user, "Asteroid Belt Mission");
     }
 
     @Override
@@ -28,6 +28,7 @@ public class MeteorBeltEvent extends HostileEvents implements IPrintOptions {
 
     @Override
     public void action() {
+        System.out.println(this);
         System.out.println("You ran into a asteroid belt what should you do?");
         printOptions();
         outcome();

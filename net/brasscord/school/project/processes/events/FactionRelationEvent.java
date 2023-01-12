@@ -7,7 +7,7 @@ import java.util.Random;
 public class FactionRelationEvent extends PassiveEvents implements IPrintOptions {
 
     public FactionRelationEvent(Scrapper user) {
-        super(EventType.confrontation, false, user);
+        super(EventType.confrontation, false, user, "Faction contact mission");
     }
 
     @Override
@@ -48,6 +48,7 @@ public class FactionRelationEvent extends PassiveEvents implements IPrintOptions
 
     @Override
     public void action() {
+        System.out.println(this);
         System.out.println("You encountered a unknown ship!");
         printOptions();
         if(userInput().equalsIgnoreCase(options()[0]))
