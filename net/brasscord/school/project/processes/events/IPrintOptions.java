@@ -2,8 +2,6 @@ package net.brasscord.school.project.processes.events;
 
 import net.brasscord.school.project.processes.InputClass;
 
-import java.util.Scanner;
-
 public interface IPrintOptions {
 
   default void printOptions() {

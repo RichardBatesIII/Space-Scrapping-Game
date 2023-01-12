@@ -135,7 +135,8 @@ public class Ship {
     Random random = new Random();
     int scrap = (int) (random.nextInt(1, 16) * stability);
     this.addScrap(scrap);
-    System.out.println("\nYou discovered some scrap while traveling\nYou found " + scrap + " scrap!");
+    System.out.println("\nYou discovered scrap while traveling\nYou found "
+                       + scrap + " scrap!");
   }
 
   public void turmoilCheck() {

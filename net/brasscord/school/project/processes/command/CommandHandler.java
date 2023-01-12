@@ -18,7 +18,8 @@ public class CommandHandler {
          command.equalsIgnoreCase(commands[1])) {
         return;
       } else if (command.equalsIgnoreCase(commands[2])) {
-        System.out.println("Commands:\nstatus: Shows the status of your ship.\nq: This quits the game.\nhelp: Shows you all the default command.\n");
+        System.out.println("Commands:\nstatus: Shows the status of your ship.\nq: This quits the game."
+                           + "\nhelp: Shows you all the default command.\n");
       } else if (command.equalsIgnoreCase(commands[3])) {
         System.out.println(user.getShip().toString() + "\n");
       } else {

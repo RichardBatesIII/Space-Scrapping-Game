@@ -14,7 +14,8 @@ public class InvasionEvent extends HostileEvents implements IPrintOptions {
         String input = userInput();
         Random random = new Random();
         int chances = random.nextInt(0, 100);
-        if(input.equalsIgnoreCase(options()[0]) || input.equalsIgnoreCase(options()[2])) {
+        if(input.equalsIgnoreCase(options()[0]) 
+           || input.equalsIgnoreCase(options()[2])) {
             if(chances >= 50)
                 victory();
             else
@@ -30,7 +31,8 @@ public class InvasionEvent extends HostileEvents implements IPrintOptions {
     @Override
     public void action() {
         System.out.println(this);
-        System.out.println("A alien invasion occurred and your ship is under-attacked.");
+        System.out.println("A alien invasion occurred"
+                           + " and your ship is under-attacked.");
         printOptions();
         outcome();
     }
@@ -39,14 +41,16 @@ public class InvasionEvent extends HostileEvents implements IPrintOptions {
     public void victory() {
         Random random = new Random();
         int scrap = random.nextInt(25, 100);
-        System.out.println("You did it! You defeated the unknown foes and gained some loot.\nYou gained " + scrap + " scrap!");
+        System.out.println("You did it! You defeated the unknown foes"
+                           + " and gained some loot.\nYou gained " + scrap + " scrap!");
         user.getShip().addScrap(scrap);
         user.getShip().addUnrest((byte) -5);
     }
 
     @Override
     public void failure() {
-        System.out.println("You where caught up in a battle and gained severe damage.");
+        System.out.println("You where caught up in a battle"
+                           + " and gained severe damage.");
         user.getShip().addScrap(-10);
         user.getShip().addUnrest((byte) 10);
     }
@@ -58,7 +62,7 @@ public class InvasionEvent extends HostileEvents implements IPrintOptions {
 
     @Override
     public String[] options() {
-        return new String[] { "defend", "retreat", "won't go down without a fight" };
+        return new String[] { "defend", "retreat", "never backdown" };
     }
 
 }

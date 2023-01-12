@@ -15,8 +15,10 @@ public class Main {
 
     time.start();
     String userInput = "";
-    System.out.println("Welcome to Space Scrapper.\nEvery round consists of command, event, and travel."
-                       + "\nIf don't want to type a command just press enter.\nEvents happen every round"
+    System.out.println("Welcome to Space Scrapper.\nEvery round consists"
+                       + " of command, event, and travel."
+                       + "\nIf don't want to type a command just press enter.\n"
+                       + "Events happen every round"
                        + " and some are unavoidable.");
     handler.handleCommand("help");
 

@@ -20,12 +20,9 @@ public class RevoltEvent extends HostileEvents implements IPrintOptions {
         if (input.equalsIgnoreCase(options()[0])) {
             System.out.println("You sabotaged the revolution");
             if(chance > 25) {
-                System.out.println("The sabotage worked and revolt failed");
-                user.getShip().addUnrest((byte) 10);
+                victory();
             } else {
-                System.out.println("Your sabotage failed"
-                                   + " and the coup succeeded");
-                user.getShip().setHealth(0);
+                failure();
             }
         } else {
             if(chance > 50)
@@ -52,12 +49,16 @@ public class RevoltEvent extends HostileEvents implements IPrintOptions {
 
     @Override
     public void victory() {
+        System.out.println("The sabotage worked and revolt failed");
+        user.getShip().addUnrest((byte) 10);
 
     }
 
     @Override
     public void failure() {
-
+        System.out.println("Your sabotage failed"
+                                   + " and the coup succeeded");
+        user.getShip().setHealth(0);
     }
 
     @Override

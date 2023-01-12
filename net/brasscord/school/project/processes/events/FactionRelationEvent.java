@@ -4,10 +4,12 @@ import net.brasscord.school.project.user.Scrapper;
 
 import java.util.Random;
 
-public class FactionRelationEvent extends PassiveEvents implements IPrintOptions {
+public class FactionRelationEvent extends PassiveEvents 
+  implements IPrintOptions {
 
     public FactionRelationEvent(Scrapper user) {
-        super(EventType.confrontation, false, user, "Faction contact mission");
+        super(EventType.confrontation, false,
+              user, "Faction contact mission");
     }
 
     @Override
@@ -17,7 +19,8 @@ public class FactionRelationEvent extends PassiveEvents implements IPrintOptions
         int scrap = random.nextInt(20);
         if(factionGenerator == 0) {
             if(user.getUEFRelation() > 0) {
-                System.out.println("You traded with the UEF and gained some scrap");
+                System.out.println("You traded with the UEF and"
+                                   + " gained some scrap");
                 user.getShip().addScrap(scrap);
             }
             else {
@@ -26,7 +29,8 @@ public class FactionRelationEvent extends PassiveEvents implements IPrintOptions
             }
         } else if (factionGenerator == 1) {
             if(user.getIlluminateRelation() > 0) {
-                System.out.println("You traded with the Illuminate and gained some scrap");
+                System.out.println("You traded with the Illuminate and"
+                                   + " gained some scrap");
                 user.getShip().addScrap(scrap);
             }
             else {
@@ -35,7 +39,8 @@ public class FactionRelationEvent extends PassiveEvents implements IPrintOptions
             }
         } else if (factionGenerator == 2) {
             if(user.getCybranRelation() > 0) {
-                System.out.println("You traded with the Cybran and gained some scrap");
+                System.out.println("You traded with the Cybran and"
+                                   + " gained some scrap");
                 user.getShip().addScrap(scrap);
             }
             else {

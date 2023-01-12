@@ -14,7 +14,8 @@ public class AbandonedShipEvent extends PassiveEvents implements IPrintOptions {
     public void outcome() {
         Random random = new Random();
         int i = random.nextInt(50);
-        System.out.println("The ship carried some goodies.\nYou gained " + i + " scraps.");
+        System.out.println("The ship carried some goodies.\nYou gained "
+                           + i + " scraps.");
         user.getShip().addScrap(i);
 
     }

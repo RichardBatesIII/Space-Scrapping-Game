@@ -14,7 +14,8 @@ public class ResourceEvent extends PassiveEvents {
         Random random = new Random();
         int chance = random.nextInt(1, 100);
         if(chance > 50)
-            System.out.println("You found a steel-like substance and you gained "
+            System.out.println("You found a"
+                               + " steel-like substance and you gained "
                                + chance + " scrap!");
         else
             System.out.println("You found a common ore vein and you gained "

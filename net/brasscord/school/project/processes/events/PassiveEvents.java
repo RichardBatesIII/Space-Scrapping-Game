@@ -6,7 +6,8 @@ public abstract class PassiveEvents extends Events implements IPrintOptions {
 
   private final boolean upgradeable;
   
-  public PassiveEvents(EventType eventType, boolean upgradeable, Scrapper user, String name) {
+  public PassiveEvents(EventType eventType, boolean upgradeable,
+                       Scrapper user, String name) {
     super(eventType, user, name);
     this.upgradeable = upgradeable;
   }

@@ -4,7 +4,8 @@ import net.brasscord.school.project.user.Scrapper;
 import java.util.Random;
 import net.brasscord.school.project.ship.CrewType;
 
-public class ScavengeEvent extends PassiveEvents implements IPrintOptions {
+public class ScavengeEvent extends PassiveEvents
+  implements IPrintOptions {
 
   private int scrap;
   

@@ -18,7 +18,7 @@ public class LowOnFundsEvent extends PassiveEvents {
 
     @Override
     public void action() {
-        System.out.println(this);
+      System.out.println(this);
       outcome();
     }
 }

@@ -15,11 +15,9 @@ public class MeteorBeltEvent extends HostileEvents implements IPrintOptions {
         if(input.equalsIgnoreCase("enter")) {
             Random random = new Random();
             if(random.nextInt(1, 100) > 40) {
-                System.out.println("You escaped the belt safely");
-                user.getShip().travel();
+                victory();
             } else {
-                System.out.println("You damaged by some of the asteroids");
-                user.getShip().setHealth(user.getShip().getHealth() - 10);
+               failure(); 
             }
         } else {
             System.out.println("You rerouted and avoided the asteroids");
@@ -36,12 +34,14 @@ public class MeteorBeltEvent extends HostileEvents implements IPrintOptions {
 
     @Override
     public void victory() {
-
+        System.out.println("You escaped the belt safely");
+        user.getShip().travel();
     }
 
     @Override
     public void failure() {
-
+        System.out.println("You damaged by some of the asteroids");                
+        user.getShip().setHealth(user.getShip().getHealth() - 10);
     }
 
     @Override
