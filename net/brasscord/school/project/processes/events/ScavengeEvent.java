@@ -31,6 +31,8 @@ public class ScavengeEvent extends PassiveEvents implements IPrintOptions {
 
   @Override
   public void action() {
+    System.out.println("You found a scrap-able meteor");
+    printOptions();
     if(userInput().equals(options()[0]))
       outcome();
   }

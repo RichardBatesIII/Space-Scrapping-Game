@@ -1,5 +1,7 @@
 package net.brasscord.school.project.processes.events;
 
+import net.brasscord.school.project.processes.InputClass;
+
 import java.util.Scanner;
 
 public interface IPrintOptions {
@@ -14,9 +16,7 @@ public interface IPrintOptions {
   }
 
   default String userInput() {
-    Scanner scan = new Scanner(System.in);
-    String response = scan.nextLine();
-    scan.close();
+    String response = InputClass.scan.next();
     return response;
   }
 

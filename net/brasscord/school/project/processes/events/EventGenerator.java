@@ -50,7 +50,7 @@ public class EventGenerator {
       PipeBurstingEvent event = new PipeBurstingEvent(user);
       event.action();
     } else if (lottery <= 61.1111111112) {
-      RatEvent event = new RatEvent(user);
+      HarvestFailureEvent event = new HarvestFailureEvent(user);
       event.action();
     } else if (lottery <= 66.6666666667) {
       ResourceEvent event = new ResourceEvent(user);
@@ -65,13 +65,13 @@ public class EventGenerator {
       ShipMeltdownEvent event = new ShipMeltdownEvent(user);
       event.action();
     } else if (lottery <= 88.888888889) {
-      ShopkeeperEncounterEvent event = new ShopkeeperEncounterEvent(user);
+      MaintenanceEvent event = new MaintenanceEvent(user);
       event.action();
     } else if (lottery <= 94.4444444445) {
       UndiscoveredPlanetEvent event = new UndiscoveredPlanetEvent(user);
       event.action();
     } else if (lottery <= 100.0) {
-      WireSlashedEvent event = new WireSlashedEvent(user);
+      ScavengeEvent event = new ScavengeEvent(user);
       event.action();
     } else {
       ScavengeEvent event = new ScavengeEvent(user);
