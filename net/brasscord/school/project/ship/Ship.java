@@ -37,7 +37,7 @@ public class Ship {
   }
 
   public Ship(Scrapper user) {
-    name = "Johnny Sins";
+    name = "Joe";
     health = 100;
     scrap = 100;
     unrest = 0;
@@ -69,6 +69,7 @@ public class Ship {
       + "\nHealth: "
             + health + "\nUnrest: " + unrest
             + "\nScrap: " + scrap
+            + "\nColonies: " + colonies
             + "\nFaction Relations\nUEF: " + user.getUEFRelation()
             + "\nIlluminate: " + user.getIlluminateRelation()
             + "\nCybran: " + user.getCybranRelation()
@@ -162,17 +163,17 @@ public class Ship {
     if(unrest > 10 && unrest <= 20) {
       health -= 1;
       stability = 1;
-    } else if(unrest <= 30) {
+    } else if(unrest > 20 && unrest <= 30) {
       health -= 5;
       stability = 0.75;
-    } else if(unrest <= 50) {
+    } else if(unrest > 30 && unrest <= 50) {
       health -= 10;
       stability = 0.5;
-    } else if(unrest <= 75) {
+    } else if(unrest > 50 && unrest <= 75) {
       health -= 25;
       stability = 0.25;
     }
-    else if(unrest <= 99) {
+    else if(unrest > 75 && unrest <= 99) {
       health -= 50;
       stability = 0.1;
     }

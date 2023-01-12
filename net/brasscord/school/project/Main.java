@@ -24,10 +24,7 @@ public class Main {
 
     // Game Loop
     while(user.getShip().getHealth() > 0) {
-      // MISSING LOGIC FOR EVENTS
-      // Fire weapons method set off an event
-      System.out.println("press enter to continue or enter q to exit: \n");
-      // Look at handler for potential bugs
+      System.out.println("Type continue to proceed or enter q to exit: \n");
       userInput = InputClass.scan.next();
       if(userInput.equals("q"))
         break;

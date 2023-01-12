@@ -15,6 +15,7 @@ public interface IPrintOptions {
 
   default String userInput() {
     String response = InputClass.scan.next();
+    System.out.println();
     return response;
   }
 

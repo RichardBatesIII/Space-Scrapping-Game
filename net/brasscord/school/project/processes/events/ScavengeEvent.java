@@ -17,8 +17,8 @@ public class ScavengeEvent extends PassiveEvents
   public int scrapCalc() {
     Random random = new Random();
     if(user.getShip().getCrew().getCrewType() == CrewType.Cleanup_Crew)
-      return random.nextInt() * 2;
-    return random.nextInt();
+      return random.nextInt(5, 100) * 2;
+    return random.nextInt(5, 100);
   }
 
   @Override

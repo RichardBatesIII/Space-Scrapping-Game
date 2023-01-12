@@ -22,7 +22,7 @@ public abstract class HostileEvents extends Events {
       + "\n" + name
       + "\nEvent Type: " + getEventType()
       + "\nInstant Failure: " + instantFailure
-      + "\n#########";
+      + "\n#########\n";
   }
   
 }

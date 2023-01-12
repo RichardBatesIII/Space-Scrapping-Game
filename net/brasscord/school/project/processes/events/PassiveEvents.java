@@ -17,7 +17,7 @@ public abstract class PassiveEvents extends Events implements IPrintOptions {
       + "\n" + name
       + "\nEvent Type: " + getEventType()
       + "\nUpgradeable: " + upgradeable
-      + "\n#########";
+      + "\n#########\n";
   }
 
   @Deprecated
