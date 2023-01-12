@@ -6,7 +6,9 @@ public abstract class Events {
   // A abstract class for creating template events.
   
   private final EventType eventType;
+  
   protected final Scrapper user;
+  
   protected final String name;
   
   public Events(EventType eventType, Scrapper user, String name) {

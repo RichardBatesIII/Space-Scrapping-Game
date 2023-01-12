@@ -1,3 +1,5 @@
+package runnable;
+
 import net.brasscord.school.project.Main;
 
 public class RunThis {

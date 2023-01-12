@@ -7,6 +7,7 @@ public class TimeCalc {
   // Please ignore this class!
   // Used to get the runtime.
   Instant startPoint;
+  
   Instant endingPoint;
 
   public TimeCalc() {
@@ -41,7 +42,9 @@ public class TimeCalc {
   }
 
   public boolean equals(TimeCalc timer) {
-    return timer.getRuntime() == getRuntime() && startPoint.equals(timer.getStartingPoint()) && endingPoint.equals(timer.getEndingPoint());
+    return timer.getRuntime() == getRuntime()
+      && startPoint.equals(timer.getStartingPoint())
+      && endingPoint.equals(timer.getEndingPoint());
   }
 
   public void start() {

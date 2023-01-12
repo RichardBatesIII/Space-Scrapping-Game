@@ -20,7 +20,7 @@ public class HarvestFailureEvent extends PassiveEvents {
             System.out.println("The plants were sabotaged and it has caused a panic.");
             user.getShip().setUnrest((byte) (3 + user.getShip().getUnrest()));
         } else if(randomInt < 10) {
-            System.out.println("Your farm suddenly died to a rogue solar flare");
+            System.out.println("Your farm suddenly died to a solar flare");
             user.getShip().setUnrest((byte) (5 + user.getShip().getUnrest()));
         }
     }

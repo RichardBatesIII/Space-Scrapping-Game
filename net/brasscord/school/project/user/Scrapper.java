@@ -4,8 +4,11 @@ import net.brasscord.school.project.ship.Ship;
 
 public class Scrapper {
   private Ship ship;
+  
   private int relationUEF;
+  
   private int relationIlluminate;
+  
   private int relationCybran;
 
   public Scrapper() {

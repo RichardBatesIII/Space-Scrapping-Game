@@ -3,8 +3,6 @@ package net.brasscord.school.project.processes.command;
 import net.brasscord.school.project.processes.InputClass;
 import net.brasscord.school.project.processes.exceptions.OptionNotFoundException;
 import net.brasscord.school.project.user.Scrapper;
-import java.util.Scanner;
-import java.util.ArrayList;
 
 public class CommandHandler {
   Scrapper user;

@@ -4,7 +4,8 @@ import net.brasscord.school.project.user.Scrapper;
 
 public class UndiscoveredPlanetEvent extends PassiveEvents implements IPrintOptions {
     public UndiscoveredPlanetEvent(Scrapper user) {
-        super(EventType.colonization, true, user, "Undiscovered planet mission");
+        super(EventType.colonization, true,
+              user, "Undiscovered planet mission");
     }
 
     @Override

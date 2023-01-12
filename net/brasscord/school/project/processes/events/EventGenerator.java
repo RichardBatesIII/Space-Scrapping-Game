@@ -7,6 +7,7 @@ import java.util.Random;
 public class EventGenerator {
   
   private double lottery;
+  
   private final Random random;
 
   public EventGenerator() {

@@ -3,6 +3,7 @@ package net.brasscord.school.project.ship;
 public class Crew {
   
   private CrewType crewType;
+  
   private final float unrestMultiplier;
 
   public Crew(CrewType crewType) {
@@ -24,6 +25,7 @@ public class Crew {
   public CrewType getCrewType() {
     return crewType;
   }
+  
   public float getUnrestMultiplier() {
     return unrestMultiplier;
   }

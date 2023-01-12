@@ -1,7 +1,5 @@
 package net.brasscord.school.project;
 
-import java.util.Scanner;
-
 import net.brasscord.school.project.processes.InputClass;
 import net.brasscord.school.project.processes.TimeCalc;
 import net.brasscord.school.project.user.Scrapper;
@@ -17,7 +15,9 @@ public class Main {
 
     time.start();
     String userInput = "";
-    System.out.println("Welcome to Space Scrapper.\nEvery round consists of command, event, and travel.\nIf don't want to type a command just press enter.\nEvents happen every round and some are unavoidable.");
+    System.out.println("Welcome to Space Scrapper.\nEvery round consists of command, event, and travel."
+                       + "\nIf don't want to type a command just press enter.\nEvents happen every round"
+                       + " and some are unavoidable.");
     handler.handleCommand("help");
 
     // Game Loop
