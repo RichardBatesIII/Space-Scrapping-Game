@@ -19,7 +19,8 @@ public class OutpostEvent extends PassiveEvents implements IPrintOptions {
 
     @Override
     public void action() {
-        System.out.println("You discovered a undiscovered planet do you want to colonize the planet?\nIt costs 10 scrap.");
+        System.out.println("You discovered a undiscovered planet"
+                           + " do you want to colonize the planet?\nIt costs 10 scrap.");
         printOptions();
         outcome();
     }

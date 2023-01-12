@@ -9,7 +9,8 @@ public class LowOnFundsEvent extends PassiveEvents {
 
     @Override
     public void outcome() {
-        System.out.println("You're extremely low on funds. You had to sell some scraps to make up for rent.");
+        System.out.println("You're extremely low on funds. "
+                           + "You had to sell some scraps to make up for rent.");
         user.getShip().addUnrest((byte) 10);
         user.getShip().addScrap(-10);
     }

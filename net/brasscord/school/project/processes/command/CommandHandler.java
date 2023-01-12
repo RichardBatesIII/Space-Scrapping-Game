@@ -16,7 +16,9 @@ public class CommandHandler {
   public void handleCommand(String command) {
     try {
       String[] commands = { "continue", "", "help", "status" };
-      if(command.equalsIgnoreCase(commands[0]) || command.equalsIgnoreCase(commands[1])) {
+      if(command.equalsIgnoreCase(commands[0]) ||
+         command.equalsIgnoreCase(commands[1])) {
+        return;
       } else if (command.equalsIgnoreCase(commands[2])) {
         System.out.println("Commands:\nstatus: Shows the status of your ship.\nq: This quits the game.\nhelp: Shows you all the default command.\n");
       } else if (command.equalsIgnoreCase(commands[3])) {

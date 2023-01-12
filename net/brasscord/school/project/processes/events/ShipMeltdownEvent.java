@@ -34,7 +34,8 @@ public class ShipMeltdownEvent extends HostileEvents implements IPrintOptions {
 
     @Override
     public void victory() {
-        System.out.println("You found the source of the meltdown and fixed it in time.");
+        System.out.println("You found the source of"
+                           + " the meltdown and fixed it in time.");
         user.getShip().addUnrest((byte) -5);
     }
 

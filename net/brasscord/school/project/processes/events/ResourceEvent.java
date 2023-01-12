@@ -14,15 +14,18 @@ public class ResourceEvent extends PassiveEvents {
         Random random = new Random();
         int chance = random.nextInt(1, 100);
         if(chance > 50)
-            System.out.println("You found a steel-like substance and you gained " + chance + " scrap!");
+            System.out.println("You found a steel-like substance and you gained "
+                               + chance + " scrap!");
         else
-            System.out.println("You found a common ore vein and you gained " + chance + " scrap in exchange.");
+            System.out.println("You found a common ore vein and you gained "
+                               + chance + " scrap in exchange.");
         user.getShip().addScrap(chance);
     }
 
     @Override
     public void action() {
-        System.out.println("While exploring you came across a ore vein of a unknown substance!");
+        System.out.println("While exploring you came"
+                           + " across a ore vein of a unknown substance!");
         outcome();
     }
 }

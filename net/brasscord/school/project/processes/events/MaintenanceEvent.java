@@ -24,7 +24,8 @@ public class MaintenanceEvent extends PassiveEvents implements IPrintOptions {
 
     @Override
     public void action() {
-        System.out.println("Your crew has some spare time to fix machinery which do you chose?");
+        System.out.println("Your crew has some spare time"
+                           + " to fix machinery which do you chose?");
         printOptions();
         outcome();
     }

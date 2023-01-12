@@ -23,14 +23,16 @@ public class RevoltEvent extends HostileEvents implements IPrintOptions {
                 System.out.println("The sabotage worked and revolt failed");
                 user.getShip().addUnrest((byte) 10);
             } else {
-                System.out.println("Your sabotage failed and the coup succeeded");
+                System.out.println("Your sabotage failed"
+                                   + " and the coup succeeded");
                 user.getShip().setHealth(0);
             }
         } else {
             if(chance > 50)
                 System.out.println("You some how avoided a revolution?");
             else {
-                System.out.println("You escaped via a new ship with some of your men");
+                System.out.println("You escaped "
+                                   + "via a new ship with some of your men");
                 Scanner scan = new Scanner(System.in);
                 System.out.println("Type a new name for your ship");
                 String name = scan.nextLine();
@@ -41,7 +43,8 @@ public class RevoltEvent extends HostileEvents implements IPrintOptions {
 
     @Override
     public void action() {
-        System.out.println("It seems due to a disagreement it has sparked a lot of controversy.");
+        System.out.println("It seems due to a disagreement"
+                           + " it has sparked rumors of a revolt.");
         printOptions();
         outcome();
     }

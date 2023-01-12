@@ -11,12 +11,13 @@ public class Ship {
   private String name;
   private int health;
   private int scrap;
+  private int colonies;
   private byte unrest;
   private double stability = 1;
+  
   private final Crew crew;
   private final Scrapper user;
   private final EventGenerator eventGenerator;
-  private int colonies;
 
   public Ship(String name, int health, CrewType crewType, Scrapper user) {
     this.name = name;
@@ -52,7 +53,9 @@ public class Ship {
   }
   
   public boolean equals(Ship ship) {
-      return health == ship.getHealth() && name.equals(ship.getName()) && scrap == ship.getScrap();
+      return health == ship.getHealth()
+        && name.equals(ship.getName())
+        && scrap == ship.getScrap();
   }
 
   public String toString() {

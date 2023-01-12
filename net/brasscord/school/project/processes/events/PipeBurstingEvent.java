@@ -15,7 +15,8 @@ public class PipeBurstingEvent extends PassiveEvents {
 
     @Override
     public void action() {
-        System.out.println("Suddenly a pipe burst and your team quickly fixed, but not fast enough.");
+        System.out.println("Suddenly a pipe burst and your"
+                           + " team quickly fixed, but not fast enough.");
         outcome();
     }
 }
