@@ -54,6 +54,7 @@ public class InvasionEvent extends HostileEvents implements IPrintOptions {
                            + " and gained severe damage.");
         user.getShip().addScrap(-10);
         user.getShip().addUnrest((byte) 10);
+        user.getShip().setHealth(user.getShip().getHealth() - 30);
     }
 
     public void escape() {

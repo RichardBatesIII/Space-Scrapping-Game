@@ -60,7 +60,6 @@ public class Ship {
   
   public boolean equals(Ship ship) {
       return health == ship.getHealth()
-        && name.equals(ship.getName())
         && scrap == ship.getScrap();
   }
 

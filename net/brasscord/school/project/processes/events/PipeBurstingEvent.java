@@ -11,6 +11,7 @@ public class PipeBurstingEvent extends PassiveEvents {
     public void outcome() {
         user.getShip().addUnrest((byte) 5);
         user.getShip().addScrap(-5);
+        user.getShip().setHealth(user.getShip().getHealth() - 10);
     }
 
     @Override
