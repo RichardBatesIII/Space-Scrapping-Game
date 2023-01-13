@@ -12,3 +12,7 @@ This project follows the GNU Public License v3.0.
 
 ### Modding using events
 Read the events.md in the events folder for further information.
+
+### Project Information
+#### Driver class: https://github.com/RichardBatesIII/Space-Scrapping-Game/blob/main/net/brasscord/school/project/Main.java
+#### Priority class: https://github.com/RichardBatesIII/Space-Scrapping-Game/blob/main/net/brasscord/school/project/ship/Ship.java
