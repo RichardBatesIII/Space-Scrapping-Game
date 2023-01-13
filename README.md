@@ -8,7 +8,7 @@ For a quick setup just clone to replit and change the .replit to run RunThis.jav
 To contribute clone the project and add any additional features or bug fixs and request merge and document any changes.
 
 ### License
-This project follows the GNU Public License v3.0.
+This project follows the GNU General Public License v3.0.
 
 ### Modding using events
 Read the events.md in the events folder for further information.
